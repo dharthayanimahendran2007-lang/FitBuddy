@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy - Requirement Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eff6ff;
+      padding: 20px;
+    }
+    .card {
+      max-width: 550px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    h1 { color: #1d4ed8; text-align: center; }
+    label { display: block; margin-top: 15px; }
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 11px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 7px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+    #result { line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>FitBuddy</h1>
+    <h2>Phase 2: Requirement Analysis</h2>
+    <p>Enter your preferences to identify project requirements.</p>
+
+    <form id="requirementForm">
+      <label for="goal">Fitness Goal</label>
+      <select id="goal" required>
+        <option value="">Choose a goal</option>
+        <option>General Fitness</option>
+        <option>Strength and Stamina</option>
+        <option>Flexibility</option>
+        <option>Healthy Lifestyle</option>
+      </select>
+
+      <label for="level">Workout Experience</label>
+      <select id="level" required>
+        <option value="">Choose your level</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+
+      <label for="time">Available Time</label>
+      <select id="time" required>
+        <option value="">Choose duration</option>
+        <option>10–15 minutes</option>
+        <option>20–30 minutes</option>
+        <option>30–45 minutes</option>
+      </select>
+
+      <button type="submit">View Requirements</button>
+    </form>
+
+    <div id="result" aria-live="polite"></div>
+  </div>
+
+  <script>
+    document.getElementById("requirementForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const goal = document.getElementById("goal").value;
+        const level = document.getElementById("level").value;
+        const time = document.getElementById("time").value;
+
+        document.getElementById("result").innerHTML =
+          "<h3>Requirements Summary</h3>" +
+          "<p><b>Goal:</b> " + goal + "</p>" +
+          "<p><b>Experience:</b> " + level + "</p>" +
+          "<p><b>Available time:</b> " + time + "</p>";
+      });
+  </script>
+</body>
+</html>
