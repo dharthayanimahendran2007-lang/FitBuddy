@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy - Ideation Phase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0fdf4;
+      text-align: center;
+      padding: 30px 15px;
+    }
+    .card {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    h1 { color: #15803d; }
+    h2 { color: #166534; }
+    p { line-height: 1.7; }
+    button {
+      background: #16a34a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>FitBuddy</h1>
+    <h2>Phase 1: Ideation</h2>
+    <p><b>Project:</b> AI Fitness Plan Generator</p>
+    <p>FitBuddy helps users explore personalized
+    workout plans using AI technology.</p>
+    <h3>Objectives</h3>
+    <p>✓ Create personalized fitness plans</p>
+    <p>✓ Support different fitness goals</p>
+    <p>✓ Provide an easy-to-use interface</p>
+    <button onclick="showIdea()">View Project Idea</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    function showIdea() {
+      document.getElementById("result").textContent =
+        "FitBuddy combines fitness goals and AI to help users plan workouts.";
+    }
+  </script>
+</body>
+</html>
