@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy - Project Planning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3ff;
+      color: #312e81;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 750px;
+      margin: auto;
+    }
+    header {
+      background: #5b21b6;
+      color: white;
+      padding: 22px;
+      border-radius: 14px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 18px;
+      margin-top: 16px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px #0001;
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .task input { width: 18px; height: 18px; }
+    progress { width: 100%; height: 18px; }
+    .tech {
+      display: inline-block;
+      background: #ede9fe;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 4px;
+    }
+    button {
+      background: #6d28d9;
+      color: white;
+      border: 0;
+      padding: 11px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FitBuddy</h1>
+      <h2>Phase 4: Project Planning</h2>
+      <p>Plan, organize and track project tasks.</p>
+    </header>
+
+    <section class="card">
+      <h2>Development Timeline</h2>
+      <div class="task">
+        <input type="checkbox" class="task-check">
+        <label>Week 1: Ideation and requirements</label>
+      </div>
+      <div class="task">
+        <input type="checkbox" class="task-check">
+        <label>Week 2: UI and project design</label>
+      </div>
+      <div class="task">
+        <input type="checkbox" class="task-check">
+        <label>Week 3: Coding and implementation</label>
+      </div>
+      <div class="task">
+        <input type="checkbox" class="task-check">
+        <label>Week 4: Testing and documentation</label>
+      </div>
+
+      <p id="progressText">Tasks completed: 0 of 4</p>
+      <progress id="progressBar" value="0" max="4"></progress>
+    </section>
+
+    <section class="card">
+      <h2>Technologies Used</h2>
+      <span class="tech">HTML</span>
+      <span class="tech">CSS</span>
+      <span class="tech">JavaScript</span>
+      <span class="tech">Python</span>
+      <span class="tech">Gemini API (planned integration)</span>
+    </section>
+
+    <section class="card">
+      <h2>Project Objective</h2>
+      <p>Develop a user-friendly fitness planning application
+      with personalized workout suggestions.</p>
+      <button onclick="showPlan()">View Plan</button>
+      <p id="planResult" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <script>
+    const checks = document.querySelectorAll(".task-check");
+
+    function updateProgress() {
+      const completed = [...checks].filter(c => c.checked).length;
+      document.getElementById("progressText").textContent =
+        "Tasks completed: " + completed + " of " + checks.length;
+      document.getElementById("progressBar").value = completed;
+    }
+
+    checks.forEach(check =>
+      check.addEventListener("change", updateProgress)
+    );
+
+    function showPlan() {
+      document.getElementById("planResult").textContent =
+        "Plan: Requirements → Design → Development → Testing → Demo.";
+    }
+  </script>
+</body>
+</html>
