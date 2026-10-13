@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy - Project Development</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ecfdf5;
+      color: #14532d;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 25px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px #0001;
+    }
+    h1 { text-align: center; color: #15803d; }
+    label { display: block; margin-top: 16px; }
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    select { border: 1px solid #ccc; }
+    button {
+      background: #16a34a;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0fdf4;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>FitBuddy 💚</h1>
+    <h2>Phase 5: Project Development</h2>
+    <p>Select your preferences to view sample fitness suggestions.</p>
+
+    <label for="goal">Fitness Goal</label>
+    <select id="goal">
+      <option value="general">General Fitness</option>
+      <option value="strength">Strength and Stamina</option>
+      <option value="flexibility">Flexibility</option>
+    </select>
+
+    <label for="level">Experience Level</label>
+    <select id="level">
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+    </select>
+
+    <button onclick="generatePlan()">Generate My Plan</button>
+
+    <section id="result" aria-live="polite">
+      Your sample plan will appear here.
+    </section>
+  </main>
+
+  <script>
+    function generatePlan() {
+      const goal = document.getElementById("goal").value;
+      const level = document.getElementById("level").value;
+
+      const plans = {
+        general: [
+          "Gentle walking",
+          "Easy mobility exercises",
+          "Comfortable stretching"
+        ],
+        strength: [
+          "Beginner bodyweight movements",
+          "Wall push-ups if comfortable",
+          "Rest and recovery"
+        ],
+        flexibility: [
+          "Gentle shoulder mobility",
+          "Comfortable stretching",
+          "Easy range-of-motion exercises"
+        ]
+      };
+
+      const activities = plans[goal];
+
+      document.getElementById("result").innerHTML =
+        "<h3>Your Sample Fitness Plan</h3>" +
+        "<p><b>Goal:</b> " + goal.replace(/^\w/, c => c.toUpperCase()) + "</p>" +
+        "<p><b>Level:</b> " + level + "</p>" +
+        "<ul>" + activities.map(item => "<li>" + item + "</li>").join("") + "</ul>" +
+        "<p>Choose activities that feel comfortable and allow time for rest.</p>";
+    }
+  </script>
+</body>
+</html>
