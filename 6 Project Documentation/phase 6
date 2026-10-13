@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBuddy - Project Documentation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    header {
+      background: #0f766e;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #0001;
+    }
+    h2 { color: #0f766e; }
+    button {
+      padding: 11px 16px;
+      border: none;
+      border-radius: 7px;
+      background: #0f766e;
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FitBuddy</h1>
+    <p>Phase 6: Project Documentation</p>
+    <p>AI-Assisted Fitness Planning Project</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Abstract</h2>
+      <p>FitBuddy is a student project designed to help users
+      explore fitness goals and view suitable workout suggestions.
+      It aims to provide a simple and user-friendly interface.</p>
+    </section>
+
+    <section>
+      <h2>2. Objectives</h2>
+      <ul>
+        <li>Provide an easy-to-use fitness interface.</li>
+        <li>Allow users to select fitness preferences.</li>
+        <li>Display relevant sample workout suggestions.</li>
+        <li>Explore future AI-based plan generation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Technologies Used</h2>
+      <ul>
+        <li>HTML – webpage structure</li>
+        <li>CSS – page design</li>
+        <li>JavaScript – interactive features</li>
+        <li>Python and Gemini API – planned AI integration</li>
+        <li>GitHub – source code management</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Project Modules</h2>
+      <ol>
+        <li>Ideation</li>
+        <li>Requirement Analysis</li>
+        <li>Project Design</li>
+        <li>Project Planning</li>
+        <li>Project Development</li>
+        <li>Project Documentation</li>
+        <li>Project Demonstration</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>5. Testing</h2>
+      <p>The sample interface can be tested by selecting different
+      fitness goals and checking the displayed suggestions.
+      Further testing is needed when the backend and AI integration
+      are implemented.</p>
+      <button onclick="showTesting()">View Test Checklist</button>
+      <div id="testingResult" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h2>6. Future Enhancements</h2>
+      <ul>
+        <li>Integrate Gemini AI through a secure backend.</li>
+        <li>Add user accounts and saved plans.</li>
+        <li>Improve accessibility and mobile support.</li>
+        <li>Include appropriate safety guidance.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Conclusion</h2>
+      <p>FitBuddy demonstrates the design of a simple fitness
+      planning application. Additional development and testing
+      can expand its capabilities.</p>
+    </section>
+  </main>
+
+  <footer>FitBuddy Student Project</footer>
+
+  <script>
+    function showTesting() {
+      document.getElementById("testingResult").innerHTML =
+        "<ul>" +
+        "<li>Check all page sections.</li>" +
+        "<li>Test fitness goal selection.</li>" +
+        "<li>Verify layout on mobile screens.</li>" +
+        "<li>Check links and buttons.</li>" +
+        "</ul>";
+    }
+  </script>
+</body>
+</html>
